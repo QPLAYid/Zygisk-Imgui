@@ -10,7 +10,7 @@ Main code lives in hook.cpp
 # Build and Installation
 Android Studio is required: https://developer.android.com/studio  <br />
 Use Android Studio to run the gradle task :module:assembleRelease to compile, the zip package will be generated in the out folder
-
+# Support Androidide
 # Credits
 Perfare - https://github.com/Perfare/Zygisk-Il2CppDumper <br />
 springmusk026 - https://github.com/springmusk026/ImGui-Unity-With-Layout <br />
