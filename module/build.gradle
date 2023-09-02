@@ -8,14 +8,13 @@ apply from: file(rootProject.file('module.gradle'))
 
 android {
     compileSdkVersion rootProject.ext.targetSdkVersion
+    ndkVersion '24.0.8215888'
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         externalNativeBuild {
             cmake {
-                arguments "-DMODULE_NAME:STRING=$moduleLibraryName"
-                // DELETE THIS IF NOT DEBUG BUILD
-                // cppFlags += "-DBIGSEX"
+                arguments "-DMODULE_NAME:STRING=$moduleLibraryName", "-DCMAKE_EXPORT_COMPILE_COMMANDS:STRING=ON"
             }
         }
     }
@@ -81,6 +80,7 @@ afterEvaluate {
                     Files.move(srcPath, dstPath)
                 }
                 new File("$magiskDir/lib").deleteDir()
+                new File("$outDir/magisk_module_$variantLowered").deleteDir()
             }
         }
 
