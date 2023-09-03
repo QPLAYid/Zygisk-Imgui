@@ -89,7 +89,7 @@ afterEvaluate {
             from magiskDir
             archiveName zipName
             destinationDir outDir
-            dolast {
+            doLast {
                 new File("$outDir/magisk_module_$variantLowered").deleteDir()
             }
         }
